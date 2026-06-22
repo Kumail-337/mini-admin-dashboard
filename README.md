@@ -26,25 +26,3 @@ To run this project locally, you will need two terminal windows to run the front
    ```bash
    git clone [https://github.com/YOUR_USERNAME/mini-admin-dashboard.git](https://github.com/YOUR_USERNAME/mini-admin-dashboard.git)
    cd mini-admin-dashboard
-
-Install dependencies:
-
-Bash
-npm install
-Start the Mock Backend (Terminal 1):
-
-Bash
-npm run server
-The JSON server will run on http://localhost:5000
-
-Start the React Frontend (Terminal 2):
-
-Bash
-npm run dev
-The app will run on http://localhost:5173
-
-Mock Login Credentials:
-
-Email: admin@admin.com
-
-Password: password
