@@ -11,27 +11,52 @@ export default function Tasks() {
   }, []);
 
   const fetchTasks = async () => {
-    const response = await api.get('/tasks');
-    setTasks(response.data);
+    try {
+      const response = await api.get('/tasks');
+      setTasks(response.data);
+    } catch (err) {
+      console.error("Error fetching tasks:", err);
+    }
   };
 
   const handleAddTask = async (e) => {
     e.preventDefault();
     if (!newTaskTitle.trim()) return;
-    await api.post('/tasks', { title: newTaskTitle, status: 'Pending' });
-    setNewTaskTitle('');
-    fetchTasks();
+    
+    try {
+      // Explicitly generating a unique ID to prevent json-server errors
+      const taskToAdd = { 
+        id: Date.now().toString(), 
+        title: newTaskTitle, 
+        status: 'Pending' 
+      };
+
+      await api.post('/tasks', taskToAdd);
+      setNewTaskTitle('');
+      fetchTasks();
+    } catch (error) {
+      console.error("Failed to add task:", error);
+      alert("Failed to add task. Ensure your json-server is running.");
+    }
   };
 
   const updateStatus = async (task, newStatus) => {
-    await api.patch(`/tasks/${task.id}`, { status: newStatus });
-    fetchTasks();
+    try {
+      await api.patch(`/tasks/${task.id}`, { status: newStatus });
+      fetchTasks();
+    } catch (error) {
+      console.error("Failed to update task status:", error);
+    }
   };
 
   const handleDelete = async (id) => {
-    await api.delete(`/tasks/${id}`);
-    fetchTasks();
-  }
+    try {
+      await api.delete(`/tasks/${id}`);
+      fetchTasks();
+    } catch (error) {
+      console.error("Failed to delete task:", error);
+    }
+  };
 
   const filteredTasks = filter === 'All' ? tasks : tasks.filter(t => t.status === filter);
 

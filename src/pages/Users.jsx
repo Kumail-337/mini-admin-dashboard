@@ -14,20 +14,32 @@ export default function Users() {
       const response = await api.get('/users');
       setUsers(response.data);
     } catch (err) {
-      console.error(err);
+      console.error("Error fetching users:", err);
     }
   };
 
   const handleAddUser = async (e) => {
     e.preventDefault();
-    await api.post('/users', newUser);
-    setNewUser({ name: '', email: '', role: 'User' });
-    fetchUsers();
+    try {
+      // Explicitly generating a unique ID to prevent json-server errors
+      const userToAdd = { ...newUser, id: Date.now().toString() };
+      
+      await api.post('/users', userToAdd);
+      setNewUser({ name: '', email: '', role: 'User' });
+      fetchUsers();
+    } catch (error) {
+      console.error("Failed to add user:", error);
+      alert("Failed to add user. Ensure your json-server is running.");
+    }
   };
 
   const handleDelete = async (id) => {
-    await api.delete(`/users/${id}`);
-    fetchUsers();
+    try {
+      await api.delete(`/users/${id}`);
+      fetchUsers();
+    } catch (error) {
+      console.error("Failed to delete user:", error);
+    }
   };
 
   return (

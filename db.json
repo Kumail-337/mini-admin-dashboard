@@ -1,11 +1,45 @@
 {
   "users": [
-    { "id": "1", "name": "Alice Johnson", "email": "alice@example.com", "role": "Admin" },
-    { "id": "2", "name": "Bob Smith", "email": "bob@example.com", "role": "Editor" }
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "Admin"
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "role": "Editor"
+    },
+    {
+      "name": "Kumail",
+      "email": "kumailh337@gmail.com",
+      "role": "User",
+      "id": "MHsMAZds8jA"
+    }
   ],
   "tasks": [
-    { "id": "1", "title": "Setup Project", "status": "Completed" },
-    { "id": "2", "title": "Build Auth Module", "status": "In Progress" },
-    { "id": "3", "title": "Deploy to Vercel", "status": "Pending" }
-  ]
+    {
+      "id": "1",
+      "title": "Setup Project",
+      "status": "Completed"
+    },
+    {
+      "id": "2",
+      "title": "Build Auth Module",
+      "status": "Completed"
+    },
+    {
+      "id": "3",
+      "title": "Deploy to Vercel",
+      "status": "Pending"
+    },
+    {
+      "id": "1x4-IlFrMd8",
+      "title": "Build Responsive Dashboard",
+      "status": "Pending"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
