@@ -1,3 +1,5 @@
+# Mini Admin Dashboard
+
 A responsive, fully functional Admin Dashboard application built with React and Tailwind CSS v4. This project serves as a comprehensive demonstration of frontend development skills, featuring mock authentication, protected routes, and complete CRUD (Create, Read, Update, Delete) operations using a mock backend.
 
 
