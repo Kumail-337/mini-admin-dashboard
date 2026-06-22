@@ -1,16 +1,50 @@
-# React + Vite
+# 📊 Mini Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, responsive Admin Dashboard application built with React and Tailwind CSS. This project features JWT-based mock authentication, full CRUD operations for users and tasks, and state management using the Context API.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Authentication Module:** Secure login with mock token persistence via `localStorage`.
+- **Dashboard Overview:** Dynamic statistics cards reflecting real-time database counts.
+- **User Management:** View, add, and delete users in a clean, responsive table interface.
+- **Task Management:** Add tasks, delete tasks, and update statuses (Pending, In Progress, Completed) with dynamic filtering.
+- **Settings UI:** Responsive profile and preferences update interface.
+- **Protected Routes:** Unauthorized users are automatically redirected to the login screen.
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React.js (Vite), React Router DOM, Context API
+- **Styling:** Tailwind CSS v4, Lucide React (Icons)
+- **HTTP Client:** Axios
+- **Backend/Database:** JSON Server (Mock API)
 
-## Expanding the ESLint configuration
+## 🚀 Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally, you will need two terminal windows to run the frontend and the mock backend simultaneously.
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/mini-admin-dashboard.git](https://github.com/YOUR_USERNAME/mini-admin-dashboard.git)
+   cd mini-admin-dashboard
+
+Install dependencies:
+
+Bash
+npm install
+Start the Mock Backend (Terminal 1):
+
+Bash
+npm run server
+The JSON server will run on http://localhost:5000
+
+Start the React Frontend (Terminal 2):
+
+Bash
+npm run dev
+The app will run on http://localhost:5173
+
+Mock Login Credentials:
+
+Email: admin@admin.com
+
+Password: password
